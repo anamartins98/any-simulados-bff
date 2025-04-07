@@ -21,6 +21,10 @@ public class QuestaoRepository {
         questaoTable.putItem(questao);
     }
 
+    public void update(Questao questao) {
+        questaoTable.updateItem(questao);
+    }
+
     public Questao findById(Long id) {
         return questaoTable.getItem(r -> r.key(k -> k.partitionValue(id)));
     }

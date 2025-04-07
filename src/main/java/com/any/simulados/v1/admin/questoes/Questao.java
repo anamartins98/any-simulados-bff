@@ -13,6 +13,7 @@ public class Questao {
     private String enunciado;
     private List<String> alternativas;
     private String respostaCorreta;
+    private Boolean questaoAtiva = true;
 
     @DynamoDbPartitionKey
     public Long getId() {

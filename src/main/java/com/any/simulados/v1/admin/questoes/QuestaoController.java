@@ -1,6 +1,5 @@
 package com.any.simulados.v1.admin.questoes;
 
-
 import com.any.simulados.v1.admin.contador.ContadorService;
 import com.any.simulados.v1.exceptions.GenericException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +12,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/v1/questoes")
 public class QuestaoController {
-    @Autowired
-    private QuestaoService questaoService;
-
     @Autowired
     private ContadorService contadorService;
     @Autowired
@@ -72,8 +68,12 @@ public class QuestaoController {
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping
-    public ResponseEntity<Questao> atualizarQuestao(Questao entrada) {
-        return null;
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> atualizarQuestao(@PathVariable("id") Long id, @RequestBody Questao entrada) {
+        if(id == entrada.getId()) {
+            questaoRepository.update(entrada);
+            return ResponseEntity.accepted().body(entrada);
+        }
+        return ResponseEntity.internalServerError().body(new GenericException(500, "ID de recurso divergente do ID de payload."));
     }
 }
