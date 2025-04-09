@@ -90,6 +90,11 @@ Para listar os itens de uma tabela, use:
 ```bash
 aws dynamodb scan --table-name NomeDaTabela --endpoint-url http://localhost:8000
 ```
+
+Para deletar uma tabela, use:
+```bash
+aws dynamodb delete-table --table-name NomeDaTabela --endpoint-url http://localhost:8000
+```
 ---
 
 ### 🧑‍💻 6. Configuração do código
