@@ -85,6 +85,11 @@ Saída esperada (caso não tenha nenhuma tabela criada ainda):
 }
 ```
 
+Para listar os itens de uma tabela, use:
+
+```bash
+aws dynamodb scan --table-name NomeDaTabela --endpoint-url http://localhost:8000
+```
 ---
 
 ### 🧑‍💻 6. Configuração do código
