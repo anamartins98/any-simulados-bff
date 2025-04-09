@@ -2,6 +2,7 @@ package com.any.simulados.v1.admin.questoes;
 
 import com.any.simulados.v1.admin.contador.ContadorService;
 import com.any.simulados.v1.exceptions.GenericException;
+import com.any.simulados.v1.utils.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,7 @@ public class QuestaoController {
 
     @PostMapping
     public ResponseEntity<Questao> cadastrarQuestao(@RequestBody Questao entrada) {
+        Logger.postar("Iniciando método cadastrarQuestao...");
         Long novoId = contadorService.getNextId("Questoes");
         entrada.setId(novoId);
         questaoRepository.save(entrada);
