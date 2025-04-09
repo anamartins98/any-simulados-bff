@@ -1,11 +1,13 @@
 package com.any.simulados.v1.admin.contador;
 
+import org.springframework.stereotype.Service;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 import software.amazon.awssdk.services.dynamodb.model.*;
 import software.amazon.awssdk.services.dynamodb.model.ReturnValue;
 
 import java.util.Map;
 
+@Service
 public class ContadorService {
 
     private final DynamoDbClient dynamoDbClient;

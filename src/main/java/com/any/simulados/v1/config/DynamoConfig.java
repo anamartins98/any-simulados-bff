@@ -1,3 +1,5 @@
+package com.any.simulados.v1.config;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
@@ -15,10 +17,10 @@ public class DynamoConfig {
     public DynamoDbClient dynamoDbClient() {
         return DynamoDbClient.builder()
                 .endpointOverride(URI.create("http://localhost:8000")) // endpoint local
-                .region(Region.US_EAST_1)
+                .region(Region.SA_EAST_1)
                 .credentialsProvider(
                         StaticCredentialsProvider.create(
-                                AwsBasicCredentials.create("dummy-access-key", "dummy-secret-key")
+                                AwsBasicCredentials.create("fake", "fake")
                         )
                 )
                 .build();
