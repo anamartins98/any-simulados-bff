@@ -26,7 +26,7 @@ A:\Downloads\dynamodb_local_latest\
 
 ### ▶️ 3. Rodando o DynamoDB Local
 
-Execute o comando abaixo para iniciar o DynamoDB Local na porta `8000`:
+Execute o comando abaixo para iniciar o DynamoDB Local na porta `8000` e considere os caminhos específicos para seu caso:
 
 ```bash
 "A:\Downloads\openjdk-17_windows-x64_bin\jdk-17\bin\java.exe" ^
@@ -87,7 +87,7 @@ Saída esperada (caso não tenha nenhuma tabela criada ainda):
 
 ---
 
-### 🧑‍💻 6. Configuração do código (exemplo em Java)
+### 🧑‍💻 6. Configuração do código
 
 Certifique-se de que sua aplicação está criando o cliente do DynamoDB assim:
 
@@ -103,5 +103,4 @@ DynamoDbClient dynamoDbClient = DynamoDbClient.builder()
 
 ---
 
-Agora seu ambiente está pronto para desenvolvimento local com o DynamoDB! ✨
 
