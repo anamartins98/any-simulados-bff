@@ -16,6 +16,5 @@ public class IAController {
     @PostMapping
     public ResponseEntity<String> rodarPrompt(@RequestBody String prompt) {
         return iaService.rodarPrompt(prompt);
-
     }
 }
